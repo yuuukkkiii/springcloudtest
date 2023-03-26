@@ -1,6 +1,7 @@
 package order.controller;
 
 
+import order.feign.ProductFeignService;
 import order.feign.StockFeignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -16,12 +17,16 @@ public class OrderController {
     @Autowired
     StockFeignService stockFeignService;
 
+    @Autowired
+    ProductFeignService productFeignService;
+
 
     @RequestMapping("/add")
     public String add(){
         System.out.println("下单成功");
         String msg=stockFeignService.reduct();
-        return "Hello Feign" +msg;
+        String result= productFeignService.get(1);
+        return "Hello Feign" +msg+"\n"+result;
     }
 
 }

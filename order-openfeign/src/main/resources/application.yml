@@ -10,3 +10,12 @@ spring:
         username: nacos
         password: nacos
         namespace: public
+#spring boot 默认的日志级别是info，feign的debug日志级别就不会输入
+logging:
+  level:
+    order.feign: debug
+feign:
+  client:
+    config:
+      product-service:
+        logger-level: BASIC
