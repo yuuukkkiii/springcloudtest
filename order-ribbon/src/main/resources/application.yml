@@ -13,3 +13,7 @@ spring:
 stock-service:
   ribbon:
     NFLoadBalancerRuleClassName: ribbon.rule.CustomRule
+ribbon:
+  eager-load:
+    enabled: true
+    clients: stock-service
