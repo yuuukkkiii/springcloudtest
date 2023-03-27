@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: order.redis
+  cloud:
+    nacos:
+      config:
+        server-addr: 8.142.110.33
+        namespace: public
+        shared-configs:
+          - data-id: com.common.properties
+            refresh: true
+          - data-id: com.common.common02.properties
+            refresh: true
+      username: nacos
+      password: nacos
+#spring.cloud.nacos.config.file-extension=yaml    ???????????
