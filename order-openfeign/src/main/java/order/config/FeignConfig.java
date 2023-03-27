@@ -13,4 +13,9 @@ public class FeignConfig {
     public Logger.Level feignLoggerLevel(){
         return Logger.Level.FULL;
     }
+
+//    拦截器配置
+/*    public FeignAuthRequestIntercepter feignAuthRequestIntercepter(){
+
+    }*/
 }

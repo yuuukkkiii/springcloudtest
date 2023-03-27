@@ -19,3 +19,11 @@ feign:
     config:
       product-service:
         logger-level: BASIC
+#        contract:   feign有原生注解，配置的过程叫契约配置
+#超时时间配置
+#连接时间  ，网络连接时间
+        connect-timeout: 5000
+#        请求处理超时时间  处理的时间
+        read-timeout: 10000
+        request-interceptors:
+          order.interceptor.feign.CustomFeignInterceptor
